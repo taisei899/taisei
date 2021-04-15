@@ -15,10 +15,20 @@ window.onload=function(){
     enemy.frame = 5;
     
     enemy.addEventListener("enterframe", function(){
-
+        if(game. frame % 10 === 0) {
+            var enemy = new Sprite(32, 32);
+        enemy.image = game.assets["charal.gif"];
+        enemy.frame = 5;
+        enemy.x = (320 - 32) * Math.random();
+        enemy.addEventListener("enterframe",function(){
+            enemy.y += 5;
+    
+    
     });
     
     game.rootScene.addChild(enemy);
+}
+    });
     game.rootScene.addChild(bear);
 
     }
