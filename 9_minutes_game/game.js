@@ -6,7 +6,12 @@ window.onload=function(){
     game.onload = function(){
     var bear =new enchant.Sprite(32,32);
     bear.image = game.assets["charal.gif"];
+    game.rootScene.addEvenListener("touchmove",function(e) {
+        bear.x = e.x;
+        bear.y = e/y;
+    });
     game.rootScene.addChild(bear);
+
     }
     game.start();
     game.rootScene.backgroundColor = "red";
