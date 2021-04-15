@@ -10,6 +10,15 @@ window.onload=function(){
         bear.x = e.x;
         bear.y = e/y;
     });
+    var enemy = new Sprite(32, 32);
+    enemy.image = game.assets["charal.gif"];
+    enemy.frame = 5;
+    
+    enemy.addEventListener("enterframe", function(){
+
+    });
+    
+    game.rootScene.addChild(enemy);
     game.rootScene.addChild(bear);
 
     }
