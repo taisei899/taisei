@@ -1,0 +1,9 @@
+enchant();
+
+// ページの読み込みが完了してからゲームを初期化する
+window.onload = function(){
+	// ゲームを初期化
+	// 引数の320はゲーム画面の横幅と縦幅
+	var game = new Game(320, 320);
+	game.start();
+}

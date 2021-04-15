@@ -1,0 +1,34 @@
+// enchant.Gameやenchant.Spriteを
+// enchant.をつけずにGameやSpriteとかけるようにする
+enchant();
+
+// ページの読み込みが完了してからゲームを初期化する
+window.onload = function(){
+	// ゲームを初期化
+	// 引数の320はゲーム画面の横幅と縦幅
+	
+	var game = new Game(320, 320);
+	
+	// 必要な画像をロードする
+	game.preload("chara1.gif");
+	game.onload = function (){
+		// スプライト(キャラ)を生成
+		// コンストラクタで幅と高さを指定
+		var bear = new Sprite(32, 32);
+		// スプライトに画像を設定
+		bear.image = game.assets["chara1.gif"];
+		// ルートシーンのイベントを監視
+		game.rootScene.addEventListener("touchmove", function(e){
+			bear.x = e.x;
+			bear.y = e.y;
+		});
+		
+		var enemy = new Sprite(32, 32);
+		enemy.image = game.assets["chara1.gif"];
+		enemy.frame = 5;
+
+		game.rootScene.addChild(enemy);	
+		game.rootScene.addChild(bear);
+	}
+	game.start();
+}

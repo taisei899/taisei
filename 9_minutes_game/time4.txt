@@ -1,0 +1,20 @@
+enchant();
+
+window.onload = function(){
+
+	var game = new Game(320, 320);
+	
+	// 必要な画像をロードする
+	game.preload("chara1.gif");
+	game.onload = function (){
+		// スプライト(キャラ)を生成
+		// コンストラクタで幅と高さを指定
+		var bear = new Sprite(32, 32);
+		// スプライトに画像を設定
+
+		// ルートシーンのイベントを監視
+		// スプライトをルートシーンに追加(登録)
+
+	}
+	game.start();
+}
