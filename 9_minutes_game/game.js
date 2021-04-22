@@ -5,7 +5,7 @@ window.onload=function() {
     game.preload("charal.gif");
     game.onload = function(){
 
-    var bear = new enchant.Sprite(32,32);
+    var bear = new Sprite(32,32);
     bear.image = game.assets["charal.gif"];
     game.rootScene.addEvenListener("touchmove",function(e) {
         bear.x = e.x;
